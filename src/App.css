@@ -2,37 +2,69 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inputBox {
+  width: 30%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 23px;
+  font-weight: 300;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.submitTodo {
+  width: 10%;
+  padding: 14px;
+  margin-left: 15px;
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: 300;
   color: white;
+  background: rgb(218, 79, 15);
+  border: none;
+  border-radius: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.submitTodo:hover {
+  cursor: pointer;
+  background-color: orangered;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoItemsList {
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 20px;
+}
+
+.todoItemsList li {
+  list-style: none;
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.todoItemsList li:hover {
+  background-color: rgb(234, 247, 243);
+}
+
+.deleteButton {
+  color: rgb(192, 25, 25);
+  float: right;
+  margin-right: 60px;
+}
+
+.deleteButton:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.editButton {
+  color: rgb(68, 68, 177);
+  float: right;
+  margin-right: 20px;
+}
+
+.editButton:hover {
+  color: rgb(4, 4, 236);
+  cursor: pointer;
 }

@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
 import './App.css';
+import Input from './component/Input';
+import List from './component/List';
+import TodoButton from './component/TodoButton';
+
 
 function App() {
+  const arr = JSON.parse(localStorage.getItem("todo"));
+
+  const [todoitem, setTodoitem] = useState("");
+
+  const [list, setList] = useState([]);
+
+  function getTodoItem(item) {
+    setTodoitem(item);
+  }
+
+  function getTodoList(list) {
+    setList(list);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Input func={getTodoItem} ></Input>
+      <TodoButton todo={todoitem} todoList={getTodoList} ></TodoButton>
+      <br /><br />
+
+      <List lis={arr}></List>
+
     </div>
   );
 }
