@@ -1,25 +1,25 @@
 import React, { useState, useRef } from "react";
 
-function Input(props) {
-    const inputValue = useRef();
+function Input({ callback }) {
+  const inputValue = useRef("");
 
+  const addTodo = () => {
+    console.log(inputValue.current.value);
+    callback(inputValue.current.value);
+    //inputValue.current.value = "";
+  };
 
-    const addTodo = () => {
-        console.log(inputValue.current.value)
-        props.func(inputValue.current.value);
-        console.log()
-        inputValue.current.value = "";
-    }
-
-    return (
-        <>
-            <input type="text" ref={inputValue} 
-                placeholder="Enter Todo"
-                className="inputBox" />
-
-                <button onClick={addTodo}>Submit</button>
-        </>
-    );
+  return (
+    <>
+      <input id="input-id001"
+        type="text"
+        ref={inputValue}
+        placeholder="Enter Todo"
+        className="inputBox"
+        onChange={addTodo}
+      />
+    </>
+  );
 }
 
 export default Input;
